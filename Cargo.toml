@@ -1,0 +1,20 @@
+[package]
+name = "kvrustdrain"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0"
+description = "A Rust library for real-time key-value storage with async database draining"
+repository = "https://github.com/max-keviv/kvrustdrain"
+homepage = "https://github.com/max-keviv/kvrustdrain"
+keywords = ["redis", "database", "key-value", "async", "rust"]
+categories = ["database", "asynchronous"]
+
+[dependencies]
+redis = "0.23"                     # Redis client
+diesel = { version = "2.1", features = ["postgres"] }  # SQL ORM for PostgreSQL
+tokio = { version = "1.34", features = ["full"] }      # Async runtime
+serde = { version = "1.0", features = ["derive"] }     # Serialization
+serde_json = "1.0"                # JSON support
+
+[dev-dependencies]
+# Add test dependencies if needed, e.g., `testcontainers` for integration tests
